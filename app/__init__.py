@@ -5,6 +5,7 @@ from .models import db, SimplePerson
 
 print("CONFIG", dir(Configuration))
 
+# instance_path option is absolute path - used to make dev.db in our project's root instead of inside that default instance folder - only useful if you're running migrations (which aren't required by specs)
 app = Flask(__name__, instance_path="/home/isales/appacademy-2022-Nov-E/6-Module/4-week/practice/assessment-for-sprint-18-practice-a-flask")
 app.config.from_object(Configuration)
 db.init_app(app)
